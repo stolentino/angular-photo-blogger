@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+//import { stringify } from '@angular/core/src/facade/lang';
 import { Entry } from '../shared/entry.model';
 
 @Component({
@@ -9,6 +10,10 @@ import { Entry } from '../shared/entry.model';
 
 export class EntryComponent {
    @Input() entry: Entry;
+
+   onCommentAdded(comment: {name: string; comment: string;}){
+       this.entry.comments.push(comment);
+   }
 }
 
 /*export class EntryComponent {
